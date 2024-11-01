@@ -8,7 +8,7 @@ plugins {
 android {
 
     namespace = "jp.co.chrono.onboarding"
-    compileSdk = 34
+    compileSdk = 35
 
     buildFeatures {
         viewBinding = true

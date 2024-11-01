@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btn.setOnClickListener {
-            binding.message.text = "こんにちは"
-        }
+        binding.toolbar.title
+        title = "MainActivity"
     }
 }
