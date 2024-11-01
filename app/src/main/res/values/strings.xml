@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FetchQiitaArticle</string>
+    <string name="article_search">Article Search</string>
+</resources>
