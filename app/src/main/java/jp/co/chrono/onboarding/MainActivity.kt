@@ -3,6 +3,7 @@ package jp.co.chrono.onboarding
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import jp.co.chrono.onboarding.databinding.ActivityMainBinding
+import java.lang.reflect.Modifier
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.title
-        title = "MainActivity"
+
+
+
     }
+}
+
+@Composable
+fun SearchQiitaArticleScreen(modifier: Modifier = Modifier) {
+    
 }
