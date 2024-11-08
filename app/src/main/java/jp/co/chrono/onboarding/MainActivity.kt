@@ -45,11 +45,16 @@ class MainActivity : AppCompatActivity() {
 
                     override fun onQueryTextSubmit(query: String): Boolean {
                         // submit button pressed
-//                        val searchQuery = binding.searchBox.query.toString()
-//                        Toast.makeText(this@MainActivity, "検索結果: $searchQuery", Toast.LENGTH_SHORT).show()
                         return false
+
+
                     }
+
+
                 })
+                val searchQuery = binding.searchBox.query.toString()
+                Toast.makeText(this@MainActivity, "検索結果: $searchQuery", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
 }
