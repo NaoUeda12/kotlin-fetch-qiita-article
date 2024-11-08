@@ -20,8 +20,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-@Composable
-fun SearchQiitaArticleScreen(modifier: Modifier = Modifier) {
-    
-}
