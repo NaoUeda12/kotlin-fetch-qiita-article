@@ -33,12 +33,14 @@
         app:layout_constraintTop_toBottomOf="@id/appBar">
 
         <SearchView
-            android:id="@+id/search"
+            android:id="@+id/searchBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:iconifiedByDefault="false"
             android:background="@drawable/rounded_search_view"
+            android:iconifiedByDefault="false"
+            android:focusable="true"
+            android:inputType="textCapSentences|textAutoCorrect"
             android:queryHint="検索" />
 
         <Button
@@ -48,5 +50,15 @@
             android:background="@drawable/square_button_background"
             android:text="Search!" />
     </LinearLayout>
+
+    <!--RecyclerViewを使う上で必要な属性-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

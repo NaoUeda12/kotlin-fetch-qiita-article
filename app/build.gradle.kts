@@ -42,7 +42,8 @@ android {
     }
 }
 dependencies {
-
+//    implementation("com.squareup.okhttp3:okhttp:4.0.0-alpha02")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
