@@ -1,13 +1,22 @@
 package jp.co.chrono.onboarding
 
 import MyItemAdapter
+import android.app.VoiceInteractor
 import android.os.Bundle
+import android.view.WindowInsetsAnimation
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsAnimationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.search.SearchBar
 import jp.co.chrono.onboarding.databinding.ActivityMainBinding
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import java.io.IOException
 import java.lang.reflect.Modifier
 
 
@@ -56,11 +65,35 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "検索結果: $searchQuery", Toast.LENGTH_SHORT)
                     .show()
             }
+
+
     }
 }
+private val client = OkHttpClient()
 
+fun run() {
+    val request = Request.Builder()
+        .url("https://qiita.com/api/v2/schema")
+        .build()
 
+    client.newCall(request).enqueue(object : Callback {
+        override fun onFailure(call: Call, e: IOException) {
+            e.printStackTrace()
+        }
 
+        override fun onResponse(call: Call, response: Response) {
+            response.use {
+                if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+                for ((name, value) in response.headers) {
+                    println("$name: $value")
+                }
+
+                println(response.body!!.string())
+            }
+        }
+    })
+}
 
 
 
