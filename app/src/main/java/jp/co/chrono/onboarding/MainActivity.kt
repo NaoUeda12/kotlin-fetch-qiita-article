@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     class SearchViewListener(private val viewModel: SearchViewModel) : SearchView.OnQueryTextListener {
         // 文字が入力されたタイミングで実行される
         override fun onQueryTextChange(newText: String?): Boolean {
-            viewModel.searchArticles(newText)
+            viewModel.searchArticles()
             return false
         }
 
