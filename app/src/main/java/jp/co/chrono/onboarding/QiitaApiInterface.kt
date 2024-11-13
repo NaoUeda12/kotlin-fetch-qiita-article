@@ -3,10 +3,10 @@ package jp.co.chrono.onboarding
 import okhttp3.Call
 import retrofit.http.GET
 import retrofit.http.Query
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-class QiitaApiInterface {
-
-    interface QiitaApiInterface {
+interface QiitaApiInterface {
 
         // GET
         @GET("items")

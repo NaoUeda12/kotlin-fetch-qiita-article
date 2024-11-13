@@ -46,8 +46,8 @@ android {
 dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("com.squareup.okhttp3:okhttp:4.9.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
-    implementation("com.squareup.retrofit:retrofit:1.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.6.2")
+    implementation("com.squareup.retrofit2:converter-moshi:2.6.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

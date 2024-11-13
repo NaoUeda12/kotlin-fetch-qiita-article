@@ -5,10 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
 
-class SearchViewModel : ViewModel() {
+class SearchViewModel: ViewModel() {
 
-    var articles: LiveData<List<QiitaApiInterface.Article>> =
-        MutableLiveData<List<QiitaApiInterface.Article>>
+    var articles: LiveData<List<Article>> = MutableLiveData<List<Article>>()
     private val qiitaRepository: QiitaRepository = QiitaRepository()
 
     fun searchArticles() {
