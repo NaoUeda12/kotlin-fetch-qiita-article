@@ -1,16 +1,16 @@
 package jp.co.chrono.onboarding
 
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface QiitaApiInterface {
 
-    // GET
+    // GETリクエストで`Response<List<Article>>`を返す
     @GET("items")
     suspend fun getArticles(
         @Query("query") query: String?
-    ):List<Article>
-
+    ): Response<List<Article>>
 }
 
 data class Article(
