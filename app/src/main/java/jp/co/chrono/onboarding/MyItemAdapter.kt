@@ -1,6 +1,7 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import jp.co.chrono.onboarding.Article
 import jp.co.chrono.onboarding.databinding.ListItemBinding
 
 class MyItemAdapter(val itemList: MutableList<String>) :
@@ -21,4 +22,7 @@ class MyItemAdapter(val itemList: MutableList<String>) :
     }
 
     override fun getItemCount() = itemList.size
+    fun setArticles(it: List<Article>) {
+
+    }
 }
