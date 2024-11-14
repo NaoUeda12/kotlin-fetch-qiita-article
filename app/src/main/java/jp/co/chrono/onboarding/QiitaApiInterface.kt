@@ -1,17 +1,18 @@
 package jp.co.chrono.onboarding
 
-import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface QiitaApiInterface {
+
+    annotation class Query(val value: String)
 
     // GET
     @GET("items")
     suspend fun getArticles(
         @Query("query") query: String?
-    ):List<Article>
+    ): List<Article>
 
 }
+annotation class GET(val value: String)
 
 data class Article(
     val id: String,
@@ -24,4 +25,3 @@ data class User(
     val name: String,
     val profile_image_url: String,
 )
-

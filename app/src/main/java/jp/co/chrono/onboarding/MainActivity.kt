@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var searchViewModel: SearchViewModel
+    private lateinit var viewAdapter: MyItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +61,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // searchViewのリスナークラス
-    class SearchViewListener(private val viewModel: SearchViewModel) : SearchView.OnQueryTextListener {
+    class SearchViewListener(private val viewModel: SearchViewModel) :
+        SearchView.OnQueryTextListener {
         // 文字が入力されたタイミングで実行される
         override fun onQueryTextChange(newText: String?): Boolean {
             viewModel.searchArticles()
@@ -84,8 +86,3 @@ fun fetchRelatedArticles(searchQuery: String) {
 fun fetchRecentArticles(query: String) {
 
 }
-
-// Retrofitのビルダー
-// private val retrofit = Retrofit.Builder().apply {
-//     baseUrl("https://api.qiita.com/v2/")
-// }.build()
