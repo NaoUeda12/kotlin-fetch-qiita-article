@@ -1,11 +1,14 @@
+package jp.co.chrono.onboarding
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import jp.co.chrono.onboarding.databinding.ListItemBinding
 
-class MyItemAdapter(val itemList: MutableList<String>): RecyclerView.Adapter<MyItemAdapter.MyViewHolder>() {
+class MyItemAdapter(val itemList: MutableList<String>) :
+    RecyclerView.Adapter<MyItemAdapter.MyViewHolder>() {
 
-    class MyViewHolder(val binding: ListItemBinding): RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val inflater = LayoutInflater.from(parent.context)
