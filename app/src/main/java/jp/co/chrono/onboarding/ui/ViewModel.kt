@@ -1,23 +1,23 @@
-package jp.co.chrono.onboarding.ui
-
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.unscramble.data.MAX_NO_OF_WORDS
-import com.example.unscramble.data.SCORE_INCREASE
-import com.example.unscramble.data.allWords
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-
-
-class SearchViewModel : ViewModel() {
-
-    private val _searchQuery = MutableLiveData<String?>()
-
+//package jp.co.chrono.onboarding.ui
+//
+//import androidx.compose.runtime.getValue
+//import androidx.compose.runtime.mutableStateOf
+//import androidx.compose.runtime.setValue
+//import androidx.lifecycle.MutableLiveData
+//import androidx.lifecycle.ViewModel
+//import com.example.unscramble.data.MAX_NO_OF_WORDS
+//import com.example.unscramble.data.SCORE_INCREASE
+//import com.example.unscramble.data.allWords
+//import kotlinx.coroutines.flow.MutableStateFlow
+//import kotlinx.coroutines.flow.StateFlow
+//import kotlinx.coroutines.flow.asStateFlow
+//import kotlinx.coroutines.flow.update
+//
+//
+//class SearchViewModel : ViewModel() {
+//
+//    private val _searchQuery = MutableLiveData<String?>()
+//
 //    val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
 //
 //    var userGuess by mutableStateOf("")
