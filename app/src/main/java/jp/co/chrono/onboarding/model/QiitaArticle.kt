@@ -1,19 +1,23 @@
 package jp.co.chrono.onboarding.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import jp.co.chrono.onboarding.model.QiitaArticle
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.Retrofit
+import retrofit2.http.GET
 
 @Serializable
 data class QiitaArticle(
-    val id: String, // 記事のID
-    val title: String, // 記事のタイトル
-    val user: User // 投稿者情報
+    val id: String,
+    val title: String,
+    val user: User
 )
 
 @Serializable
 data class User(
-    val id: String, // ユーザーID
-    val name: String, // ユーザー名
+    val id: String,
+    val name: String,
     @SerialName("profile_image_url")
-    val profileImageUrl: String // プロフィール画像のURL
+    val profileImageUrl: String
 )
