@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
@@ -47,10 +46,8 @@
             android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:background="#f5f5f5"
-            android:text="Search!"
-            android:textColor="#000000" />
+            android:background="@drawable/square_button_background"
+            android:text="Search!" />
     </LinearLayout>
 
     <!--RecyclerViewを使う上で必要な属性-->

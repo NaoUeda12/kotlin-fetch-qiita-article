@@ -1,23 +1,19 @@
-//package jp.co.chrono.onboarding.model
-//
-//import jp.co.chrono.onboarding.model.QiitaArticle
-//import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-//import kotlinx.serialization.json.Json
-//import okhttp3.MediaType.Companion.toMediaType
-//import retrofit2.Retrofit
-//import retrofit2.http.GET
-//
-//@Serializable
-//data class QiitaArticle(
-//    val id: String,
-//    val title: String,
-//    val user: User
-//)
-//
-//@Serializable
-//data class User(
-//    val id: String,
-//    val name: String,
-//    @SerialName("profile_image_url")
-//    val profileImageUrl: String
-//)
+package jp.co.chrono.onboarding.model
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class QiitaArticle(
+    @Json(name = "id") val id: String,
+    @Json(name = "title") val title: String,
+    @Json(name = "url") val url: String,
+    @Json(name = "user") val user: User,
+)
+
+@JsonClass(generateAdapter = true)
+data class User(
+    @Json(name = "id") val id: String,
+    @Json(name = "name") val name: String,
+    @Json(name = "profile_image_url") val profileImageUrl: String,
+)
