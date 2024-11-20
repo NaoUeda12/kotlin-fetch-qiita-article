@@ -23,45 +23,30 @@ class MainActivity : AppCompatActivity(), SavedStateRegistry.SavedStateProvider 
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate Called")
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState == null) {
-            savedQuery = null
-        } else {
-            savedQuery = savedStateRegistry.consumeRestoredStateForKey(SEARCH_QUERY_KEY)
-                ?.getString(SEARCH_QUERY_KEY)
-        }
+        val sharedPref = getSharedPreferences("com.stored_query", MODE_PRIVATE)
+        savedQuery = sharedPref.getString(SEARCH_QUERY_KEY, null)
 
-        // RecyclerViewの設定
-        val itemList = mutableListOf<String>()
-        for (i in 1..30) {
-            itemList.add("${i}個目のアイテム")
-        }
-        binding.myRecyclerView.setHasFixedSize(true)
-        binding.myRecyclerView.adapter = MyItemAdapter(itemList)
-        binding.myRecyclerView.layoutManager = LinearLayoutManager(this)
-
-
+        // 検索ボックスに保存されたクエリを設定
         savedQuery?.let {
             binding.searchBox.setQuery(it, false)
         }
-
-
-        binding.searchBox.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String): Boolean {
-
-                return false
-            }
-
-            override fun onQueryTextSubmit(query: String): Boolean {
-                Log.d(TAG, "Search submitted with query: $query")
-                savedQuery = query
-                return false
-            }
-        })
     }
+
+    val searchBar = binding.searchBox
+
+//    // RecyclerViewの設定
+//    val itemList = mutableListOf<String>()
+//    for (i in 1..30)
+//    {
+//        itemList.add("${i}個目のアイテム")
+//    }
+//    binding.myRecyclerView.setHasFixedSize(true)
+//    binding.myRecyclerView.adapter = MyItemAdapter(itemList)
+//    binding.myRecyclerView.layoutManager = LinearLayoutManager(this)
+
 
     override fun onPause() {
         super.onPause()
