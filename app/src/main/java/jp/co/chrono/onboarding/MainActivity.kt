@@ -46,8 +46,7 @@ class MainActivity : AppCompatActivity(), SavedStateRegistry.SavedStateProvider 
 //    binding.myRecyclerView.setHasFixedSize(true)
 //    binding.myRecyclerView.adapter = MyItemAdapter(itemList)
 //    binding.myRecyclerView.layoutManager = LinearLayoutManager(this)
-
-
+    
     override fun onPause() {
         super.onPause()
         Log.d(TAG, "onPause Called")
